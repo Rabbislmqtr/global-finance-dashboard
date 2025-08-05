@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Finance Dashboard</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-chart-line me-2"></i>
+                Global Finance Dashboard
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto" id="navbar-links">
+                    <!-- Navigation will be populated by JavaScript -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content" style="margin-top: 80px;">
+        <!-- Content will be loaded here -->
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5><i class="fas fa-chart-line me-2"></i>Global Finance Dashboard</h5>
+                    <p class="mb-0">Manage your finances globally with real-time analytics and multi-currency support.</p>
+                </div>
+                <div class="col-md-3">
+                    <h6>Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" onclick="loadPage('dashboard')" class="text-light text-decoration-none">Dashboard</a></li>
+                        <li><a href="#" onclick="loadPage('transactions')" class="text-light text-decoration-none">Transactions</a></li>
+                        <li><a href="#" onclick="loadPage('reports')" class="text-light text-decoration-none">Reports</a></li>
+                        <li><a href="#" onclick="loadPage('profile')" class="text-light text-decoration-none">Profile</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h6>Support</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="pages/help-center.html" class="text-light text-decoration-none">Help Center</a></li>
+                        <li><a href="pages/contact-support.html" class="text-light text-decoration-none">Contact Support</a></li>
+                        <li><a href="pages/privacy-policy.html" class="text-light text-decoration-none">Privacy Policy</a></li>
+                        <li><a href="pages/terms-of-service.html" class="text-light text-decoration-none">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-3">
+            <div class="row align-items-center">
+                <div class="col-md-4">
+                    <p class="mb-0">&copy; 2025 Global Finance Dashboard. All rights reserved.</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <div class="footer-links">
+                        <a href="pages/help-center.html" class="text-light me-3">Help Center</a>
+                        <a href="pages/contact-support.html" class="text-light me-3">Contact</a>
+                        <a href="pages/privacy-policy.html" class="text-light me-3">Privacy</a>
+                        <a href="pages/terms-of-service.html" class="text-light">Terms</a>
+                    </div>
+                </div>
+                <div class="col-md-4 text-md-end">
+                    <small>Built with HTML5, CSS3, Bootstrap & Chart.js</small>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/auth.js"></script>
+    <script src="assets/js/dashboard.js"></script>
+    <script src="assets/js/transactions.js"></script>
+    <script src="assets/js/profile.js"></script>
+    <script src="assets/js/reports.js"></script>
+    <script src="assets/js/app.js"></script>
+    
+    <script>
+        // Initialize the app when the page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeApp();
+            
+            // Set up managers once app is initialized
+            if (window.app) {
+                window.app.dashboard.setDataManager(window.app.data);
+                window.app.transactions.setDataManager(window.app.data);
+                window.app.profile.setDataManager(window.app.data);
+                window.app.reports.setDataManager(window.app.data);
+                
+                // Make managers globally available
+                window.transactions = window.app.transactions;
+                window.dashboard = window.app.dashboard;
+                window.profile = window.app.profile;
+                window.reports = window.app.reports;
+            }
+        });
+    </script>
+</body>
+</html>
