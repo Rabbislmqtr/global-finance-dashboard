@@ -187,6 +187,18 @@ class FinanceApp {
             case 'settings':
                 this.profile.showSettings();
                 break;
+            case 'help':
+                this.showHelpPage();
+                break;
+            case 'contact':
+                this.showContactPage();
+                break;
+            case 'privacy':
+                this.showPrivacyPage();
+                break;
+            case 'terms':
+                this.showTermsPage();
+                break;
             default:
                 this.loadLandingPage();
         }
@@ -423,6 +435,380 @@ class FinanceApp {
             info: 'info-circle'
         };
         return icons[type] || 'info-circle';
+    }
+
+    // Support Pages
+    showHelpPage() {
+        const mainContent = document.getElementById('main-content');
+        mainContent.innerHTML = `
+            <div class="container py-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="text-center mb-5">
+                            <h1 class="display-4 mb-3">
+                                <i class="fas fa-question-circle text-primary me-3"></i>
+                                Help Center
+                            </h1>
+                            <p class="lead">Find answers to common questions and get help with your Global Finance Dashboard</p>
+                        </div>
+
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="card h-100 shadow-sm">
+                                    <div class="card-body">
+                                        <h5 class="card-title">
+                                            <i class="fas fa-chart-bar text-primary me-2"></i>
+                                            Getting Started
+                                        </h5>
+                                        <p class="card-text">Learn how to set up your dashboard, add accounts, and start tracking your finances.</p>
+                                        <ul class="list-unstyled">
+                                            <li><i class="fas fa-check text-success me-2"></i>Setting up your profile</li>
+                                            <li><i class="fas fa-check text-success me-2"></i>Adding financial accounts</li>
+                                            <li><i class="fas fa-check text-success me-2"></i>Understanding the dashboard</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card h-100 shadow-sm">
+                                    <div class="card-body">
+                                        <h5 class="card-title">
+                                            <i class="fas fa-exchange-alt text-success me-2"></i>
+                                            Managing Transactions
+                                        </h5>
+                                        <p class="card-text">Learn how to add, categorize, and manage your financial transactions effectively.</p>
+                                        <ul class="list-unstyled">
+                                            <li><i class="fas fa-check text-success me-2"></i>Adding new transactions</li>
+                                            <li><i class="fas fa-check text-success me-2"></i>Categorizing expenses</li>
+                                            <li><i class="fas fa-check text-success me-2"></i>Editing and deleting transactions</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card h-100 shadow-sm">
+                                    <div class="card-body">
+                                        <h5 class="card-title">
+                                            <i class="fas fa-chart-pie text-info me-2"></i>
+                                            Reports & Analytics
+                                        </h5>
+                                        <p class="card-text">Understand your financial reports and make the most of analytics features.</p>
+                                        <ul class="list-unstyled">
+                                            <li><i class="fas fa-check text-success me-2"></i>Reading financial reports</li>
+                                            <li><i class="fas fa-check text-success me-2"></i>Setting up budgets</li>
+                                            <li><i class="fas fa-check text-success me-2"></i>Tracking spending patterns</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card h-100 shadow-sm">
+                                    <div class="card-body">
+                                        <h5 class="card-title">
+                                            <i class="fas fa-globe text-warning me-2"></i>
+                                            Multi-Currency Support
+                                        </h5>
+                                        <p class="card-text">Learn how to manage multiple currencies and international transactions.</p>
+                                        <ul class="list-unstyled">
+                                            <li><i class="fas fa-check text-success me-2"></i>Adding different currencies</li>
+                                            <li><i class="fas fa-check text-success me-2"></i>Exchange rate handling</li>
+                                            <li><i class="fas fa-check text-success me-2"></i>Currency conversion</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-center mt-5">
+                            <h3>Still need help?</h3>
+                            <p class="mb-4">Can't find what you're looking for? Contact our support team for personalized assistance.</p>
+                            <button onclick="loadPage('contact')" class="btn btn-primary btn-lg">
+                                <i class="fas fa-envelope me-2"></i>
+                                Contact Support
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+
+    showContactPage() {
+        const mainContent = document.getElementById('main-content');
+        mainContent.innerHTML = `
+            <div class="container py-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="text-center mb-5">
+                            <h1 class="display-4 mb-3">
+                                <i class="fas fa-envelope text-primary me-3"></i>
+                                Contact Support
+                            </h1>
+                            <p class="lead">Get in touch with our support team for assistance with your Global Finance Dashboard</p>
+                        </div>
+
+                        <div class="row g-4 mb-5">
+                            <div class="col-md-4 text-center">
+                                <div class="card border-0 h-100">
+                                    <div class="card-body">
+                                        <div class="mb-3">
+                                            <i class="fas fa-envelope fa-3x text-primary"></i>
+                                        </div>
+                                        <h5>Email Support</h5>
+                                        <p class="text-muted">Send us an email and we'll respond within 24 hours</p>
+                                        <a href="mailto:rabbilslmqtr@gmail.com" class="btn btn-outline-primary">
+                                            <i class="fas fa-paper-plane me-2"></i>
+                                            Send Email
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <div class="card border-0 h-100">
+                                    <div class="card-body">
+                                        <div class="mb-3">
+                                            <i class="fas fa-question-circle fa-3x text-success"></i>
+                                        </div>
+                                        <h5>Help Center</h5>
+                                        <p class="text-muted">Browse our comprehensive help documentation</p>
+                                        <button onclick="loadPage('help')" class="btn btn-outline-success">
+                                            <i class="fas fa-book me-2"></i>
+                                            Browse Help
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <div class="card border-0 h-100">
+                                    <div class="card-body">
+                                        <div class="mb-3">
+                                            <i class="fas fa-bug fa-3x text-warning"></i>
+                                        </div>
+                                        <h5>Report Bug</h5>
+                                        <p class="text-muted">Found an issue? Let us know so we can fix it</p>
+                                        <a href="mailto:rabbilslmqtr@gmail.com?subject=Bug Report - Global Finance Dashboard" class="btn btn-outline-warning">
+                                            <i class="fas fa-exclamation-triangle me-2"></i>
+                                            Report Bug
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card shadow-sm">
+                            <div class="card-header bg-primary text-white">
+                                <h4 class="mb-0">
+                                    <i class="fas fa-comment-dots me-2"></i>
+                                    Quick Contact Form
+                                </h4>
+                            </div>
+                            <div class="card-body">
+                                <form id="contactForm">
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <label for="contactName" class="form-label">Name</label>
+                                            <input type="text" class="form-control" id="contactName" required>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="contactEmail" class="form-label">Email</label>
+                                            <input type="email" class="form-control" id="contactEmail" required>
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="contactSubject" class="form-label">Subject</label>
+                                            <select class="form-select" id="contactSubject" required>
+                                                <option value="">Choose a subject...</option>
+                                                <option value="general">General Inquiry</option>
+                                                <option value="technical">Technical Support</option>
+                                                <option value="feature">Feature Request</option>
+                                                <option value="bug">Bug Report</option>
+                                                <option value="billing">Billing Question</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="contactMessage" class="form-label">Message</label>
+                                            <textarea class="form-control" id="contactMessage" rows="5" required 
+                                                placeholder="Please describe your question or issue in detail..."></textarea>
+                                        </div>
+                                        <div class="col-12">
+                                            <button type="submit" class="btn btn-primary btn-lg">
+                                                <i class="fas fa-paper-plane me-2"></i>
+                                                Send Message
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="alert alert-info mt-4">
+                            <i class="fas fa-info-circle me-2"></i>
+                            <strong>Note:</strong> This contact form will open your default email client with a pre-filled message. 
+                            Our support email is <strong>rabbilslmqtr@gmail.com</strong>.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                document.getElementById('contactForm').addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const name = document.getElementById('contactName').value;
+                    const email = document.getElementById('contactEmail').value;
+                    const subject = document.getElementById('contactSubject').value;
+                    const message = document.getElementById('contactMessage').value;
+                    
+                    const emailSubject = 'Global Finance Dashboard - ' + subject;
+                    const emailBody = 'Name: ' + name + '\\n' +
+                                     'Email: ' + email + '\\n\\n' +
+                                     'Message:\\n' + message;
+                    
+                    const mailtoLink = 'mailto:rabbilslmqtr@gmail.com?subject=' + 
+                                      encodeURIComponent(emailSubject) + 
+                                      '&body=' + encodeURIComponent(emailBody);
+                    
+                    window.location.href = mailtoLink;
+                });
+            </script>
+        `;
+    }
+
+    showPrivacyPage() {
+        const mainContent = document.getElementById('main-content');
+        mainContent.innerHTML = `
+            <div class="container py-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="text-center mb-5">
+                            <h1 class="display-4 mb-3">
+                                <i class="fas fa-shield-alt text-primary me-3"></i>
+                                Privacy Policy
+                            </h1>
+                            <p class="lead">Your privacy is important to us. Learn how we collect, use, and protect your information.</p>
+                            <small class="text-muted">Last updated: August 5, 2025</small>
+                        </div>
+
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h3>1. Information We Collect</h3>
+                                <p>We collect information you provide directly to us, such as when you create an account, use our services, or contact us for support.</p>
+                                <ul>
+                                    <li><strong>Personal Information:</strong> Name, email address, and profile information</li>
+                                    <li><strong>Financial Data:</strong> Transaction information, account balances, and financial goals</li>
+                                    <li><strong>Usage Data:</strong> How you interact with our dashboard and features</li>
+                                </ul>
+
+                                <h3 class="mt-4">2. How We Use Your Information</h3>
+                                <p>We use the information we collect to:</p>
+                                <ul>
+                                    <li>Provide and maintain our financial dashboard services</li>
+                                    <li>Process transactions and manage your financial data</li>
+                                    <li>Send you technical notices and support messages</li>
+                                    <li>Improve our services and develop new features</li>
+                                </ul>
+
+                                <h3 class="mt-4">3. Data Security</h3>
+                                <p>We implement appropriate security measures to protect your personal information:</p>
+                                <ul>
+                                    <li>All data is stored locally in your browser</li>
+                                    <li>No financial data is transmitted to external servers</li>
+                                    <li>Secure authentication and session management</li>
+                                    <li>Regular security updates and monitoring</li>
+                                </ul>
+
+                                <h3 class="mt-4">4. Data Sharing</h3>
+                                <p>We do not sell, trade, or otherwise transfer your personal information to third parties. This does not include trusted third parties who assist us in operating our website, conducting our business, or serving our users, so long as those parties agree to keep this information confidential.</p>
+
+                                <h3 class="mt-4">5. Your Rights</h3>
+                                <p>You have the right to:</p>
+                                <ul>
+                                    <li>Access your personal data</li>
+                                    <li>Correct inaccurate data</li>
+                                    <li>Delete your account and associated data</li>
+                                    <li>Export your financial data</li>
+                                </ul>
+
+                                <h3 class="mt-4">6. Contact Us</h3>
+                                <p>If you have any questions about this Privacy Policy, please contact us at:</p>
+                                <div class="alert alert-primary">
+                                    <i class="fas fa-envelope me-2"></i>
+                                    Email: <a href="mailto:rabbilslmqtr@gmail.com">rabbilslmqtr@gmail.com</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+
+    showTermsPage() {
+        const mainContent = document.getElementById('main-content');
+        mainContent.innerHTML = `
+            <div class="container py-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="text-center mb-5">
+                            <h1 class="display-4 mb-3">
+                                <i class="fas fa-file-contract text-primary me-3"></i>
+                                Terms of Service
+                            </h1>
+                            <p class="lead">Please read these terms carefully before using our Global Finance Dashboard.</p>
+                            <small class="text-muted">Last updated: August 5, 2025</small>
+                        </div>
+
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h3>1. Acceptance of Terms</h3>
+                                <p>By accessing and using Global Finance Dashboard, you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by the above, please do not use this service.</p>
+
+                                <h3 class="mt-4">2. Description of Service</h3>
+                                <p>Global Finance Dashboard is a personal financial management tool that helps you:</p>
+                                <ul>
+                                    <li>Track income and expenses</li>
+                                    <li>Manage multiple currencies</li>
+                                    <li>Generate financial reports</li>
+                                    <li>Set and monitor financial goals</li>
+                                </ul>
+
+                                <h3 class="mt-4">3. User Responsibilities</h3>
+                                <p>As a user of our service, you agree to:</p>
+                                <ul>
+                                    <li>Provide accurate and complete information</li>
+                                    <li>Keep your account credentials secure</li>
+                                    <li>Use the service for lawful purposes only</li>
+                                    <li>Not attempt to compromise the security of the service</li>
+                                </ul>
+
+                                <h3 class="mt-4">4. Data and Privacy</h3>
+                                <p>Your financial data is stored locally in your browser and is not transmitted to our servers. You are responsible for backing up your data. We recommend regularly exporting your data for safekeeping.</p>
+
+                                <h3 class="mt-4">5. Limitation of Liability</h3>
+                                <p>This service is provided "as is" without any representations or warranties. We shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses.</p>
+
+                                <h3 class="mt-4">6. Modifications to Service</h3>
+                                <p>We reserve the right to modify or discontinue, temporarily or permanently, the service with or without notice. We shall not be liable to you or to any third party for any modification, suspension, or discontinuance of the service.</p>
+
+                                <h3 class="mt-4">7. Termination</h3>
+                                <p>You may terminate your use of the service at any time. We may terminate or suspend your access immediately, without prior notice or liability, for any reason whatsoever.</p>
+
+                                <h3 class="mt-4">8. Contact Information</h3>
+                                <p>Questions about the Terms of Service should be sent to us at:</p>
+                                <div class="alert alert-primary">
+                                    <i class="fas fa-envelope me-2"></i>
+                                    Email: <a href="mailto:rabbilslmqtr@gmail.com">rabbilslmqtr@gmail.com</a>
+                                </div>
+
+                                <div class="alert alert-info mt-4">
+                                    <i class="fas fa-info-circle me-2"></i>
+                                    <strong>Note:</strong> By continuing to use this service, you agree to these terms. If you have any questions, please don't hesitate to contact us.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
     }
 }
 
